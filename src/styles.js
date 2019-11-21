@@ -135,6 +135,7 @@ const styleGenerator = styleGeneratorProps => {
     measurementsFinished,
     ownProps,
     placement,
+    containerStyles,
   } = styleGeneratorProps;
 
   const { height, width } = adjustedContentSize;
@@ -173,8 +174,9 @@ const styleGenerator = styleGeneratorProps => {
     containerStyle: [
       styles.container,
       adjustedContentSize.width !== 0 &&
-        measurementsFinished &&
-        styles.containerVisible,
+      measurementsFinished &&
+      styles.containerVisible,
+      containerStyles,
     ],
     contentStyle,
     tooltipStyle: [

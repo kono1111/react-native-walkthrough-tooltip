@@ -368,6 +368,7 @@ class Tooltip extends Component {
       ownProps: { ...this.props },
       placement: this.state.placement,
       tooltipOrigin: this.state.tooltipOrigin,
+      containerStyles: this.props.containerStyles,
     });
 
     const hasChildren = React.Children.count(this.props.children) > 0;
