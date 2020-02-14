@@ -263,8 +263,13 @@ class Tooltip extends Component {
 
     if (this.props.useInteractionManager) {
       InteractionManager.runAfterInteractions(() => {
+        if( this.timer) clearTimeout(this.timer);
         doMeasurement();
       });
+      // runAfterInteractionsが発火しない可能性があるので1秒後に実行
+      this.timer = setTimeout(() => {
+        doMeasurement();
+      }, 1000);
     } else {
       doMeasurement();
     }
